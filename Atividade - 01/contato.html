@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Contato</title>
   </head>
   <body>
     <nav>
@@ -17,31 +17,55 @@
       </ul>
     </nav>
 
-    <main>
+    <main class="mainContato">
       <section class="contato">
         <form class="form">
-          <img src="assets/img/contato.png" width="60" alt="foto de uma agenda">
+          <img
+            src="assets/img/contato.png"
+            width="60"
+            alt="foto de uma agenda"
+          />
           <h2>Entre em contato</h2>
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" />
+          <input type="text" id="nome" onkeyup="validaNome()">
+          <div id="txtNome"></div>
+
           <label for="email">E-mail:</label>
-          <input type="email" id="email" />
-          <label for="assunto">Assunto:</label><br />
-          <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
-          <button type="submit">Enviar</button>
+          <input type="email" id="email" onkeyup="validaEmail()">
+          <div id="txtEmail"></div>
+
+          <label for="assunto">Assunto:</label>
+          <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+          <div id="contador"></div>
+          <div id="txtAssunto"></div>
+
+          <button type="submit" onclick="enviar()">Enviar</button>
+
         </form>
       </section>
 
       <section class="endereco">
         <div class="rua">
-        <h2>Endereço</h2>
-        <p>Rua: Jesus me salvou!</p>
-        <p>São Paulo - SP</p>
-      </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d234268.45102144158!2d-46.465427!3d-23.444424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8bc18905650d%3A0xb2ee728806cbe3f!2sGuarulhos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1644534638023!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <h2>Endereço</h2>
+          <p>Rua: Jesus me salvou!</p>
+          <p>São Paulo - SP</p>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d234268.45102144158!2d-46.465427!3d-23.444424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8bc18905650d%3A0xb2ee728806cbe3f!2sGuarulhos%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1644534638023!5m2!1spt-BR!2sbr"
+          width="400"
+          height="300"
+          onmousemove="mapaZoom()" onmouseout="mapaNormal()"
+          id="mapa"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
       </section>
     </main>
 
-    <footer><p>Desenvolvido por - Bruno Ribeiro - Generation Brasil - 2022.</p></footer>
+    <footer>
+      <p>Desenvolvido por - Bruno Ribeiro - Generation Brasil - 2022.</p>
+    </footer>
+    <script src="assets/script.js"></script>
   </body>
 </html>
